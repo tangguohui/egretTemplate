@@ -1,0 +1,104 @@
+环境安装
+EgretLauncher
+https://egret.com/downloads/engine.html
+1、注册并登录EgretLauncher
+2、下载引擎
+3、下载Egret Inspector Chrome插件包，解压Chrome扩展开发者模式本地压缩包安装
+4、如果涉及EUI项目开发，下载Egret UI Editor
+5、创建项目，打开项目目录，复制libs\modules到libs（可以从已创建的项目查看对应引擎版本的API文档）
+
+
+代码调试
+https://github.com/kube/vscode-ts-webpack-node-debug-example
+https://webpack.js.org/guides/typescript/
+https://github.com/TypeStrong/ts-loader
+1、tsconfig.json增加"sourceMap": true,
+2、build/webpack.dev.config.js设置devtool: 'cheap-module-source-map',
+   https://webpack.js.org/configuration/devtool/（选择quality包含original source）
+3、安装Debugger for Chrome VSCode扩展
+4、F5调试选择Chrome，项目自动创建.vscode/launch.json，内容如下：
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
+}
+5、npm run dev启动webpack-dev-server，代码打断点，再次F5，然后F10 F11进行断点操作（左侧变量Local可看到当前变量值，下方调试控制台输出可看到log）
+
+
+引擎文档
+http://developer.egret.com/cn/github/egret-docs/Engine2D/displayObject/displayObject/index.html
+http://developer.egret.com/cn/apidoc/
+音频系统
+http://developer.egret.com/cn/github/egret-docs/Engine2D/multimedia/audio/index.html
+http://developer.egret.com/cn/apidoc/index/name/egret.Sound
+锚点(anchorOffset)
+https://www.jianshu.com/p/8161f37c255a
+Egret之位图字体
+https://blog.csdn.net/weixin_34032792/article/details/89807566
+https://www.cnblogs.com/gamedaybyday/p/11832069.html
+深度和子对象管理
+http://developer.egret.com/cn/github/egret-docs/Engine2D/displayObject/depthManagement/index.html
+纹理的填充方式
+http://developer.egret.com/cn/github/egret-docs/Engine2D/bitmapTexture/fillMode/index.html
+Timer计时器
+http://developer.egret.com/cn/github/egret-docs/Engine2D/timeControl/timeControl/index.html
+发送HTTP请求
+http://developer.egret.com/cn/github/egret-docs/Engine2D/net/sendHTTP/index.html
+碰撞检测
+http://developer.egret.com/cn/github/egret-docs/Engine2D/hit/rectangleHit/index.html
+
+
+第三方库的使用方法
+http://developer.egret.com/cn/github/egret-docs/extension/threes/instructions/index.html
+缓动动画
+http://developer.egret.com/cn/github/egret-docs/extension/tween/tween/index.html
+http://developer.egret.com/cn/apidoc/index/name/egret.Tween
+资源加载（assets/res.json groups/keys不能包含空格）
+http://developer.egret.com/cn/github/egret-docs/extension/RES/getway/index.html
+http://developer.egret.com/cn/apidoc/index/name/RES.globalFunction
+https://www.cnblogs.com/gamedaybyday/p/6079694.html
+纹理集的使用
+http://developer.egret.com/cn/github/egret-docs/Engine2D/bitmapTexture/useTexture/index.html
+https://www.cnblogs.com/egret-edcation/p/9982816.html
+
+
+场景管理
+https://blog.csdn.net/u010392459/article/details/83305891
+https://www.cnblogs.com/jiajunjie/p/9117526.html
+
+
+教程链接
+https://www.cnblogs.com/gamedaybyday/category/908333.html
+https://www.cnblogs.com/egret-edcation/
+一些性能优化
+https://www.cnblogs.com/gamedaybyday/p/9095545.html
+简单的画布
+https://www.cnblogs.com/gamedaybyday/p/9219926.html
+震屏效果
+https://www.cnblogs.com/gamedaybyday/p/9219922.html
+反向遮罩 (新手指引 镂空 镂空区域可穿透点击)
+https://www.cnblogs.com/gamedaybyday/p/9374959.html
+对象池Pool
+https://www.cnblogs.com/gamedaybyday/p/6083164.html
+
+
+其它
+TypeScript Handbook（中文版）
+https://zhongsp.gitbooks.io/typescript-handbook/content/index.html
+在TypeScript中使用jsx：tsconfig.json增加"jsx":"preserve"，preserve只是支持.tsx文件编辑JSX，但不会把JSX转换为JS，还需要借助babel-loader来进一步转换。
+https://www.tslang.cn/docs/handbook/jsx.html
+另外一个很不错的2D H5游戏框架http://phaser.io
+
+
+注意
+1、Egret项目需要在WebServer上运行，不能本地直接打开index.html浏览。
+2、IE都不支持Promise，需要安装es6-promise修复。https://segmentfault.com/q/1010000019489657
+3、IE9开始支持Canvas，但是IE9不支持Egret框架使用到的Uint8Array，所以Egret不支持IE9及以下的浏览器。
+4、采用TypeScript开发，对于异步编程async/await不再需要regenerator-runtime库支持，TS编译器直接转换好了。

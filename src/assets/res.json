@@ -1,0 +1,31 @@
+{
+	"groups": [
+		{
+			"keys": "bg,btn,bg_sound,hit_sound",
+			"name": "preload"
+		}
+	],
+	"resources": [
+		{
+			"name": "bg",
+			"type": "image",
+			"url": "bg.jpg"
+        },
+        {
+			"name": "btn",
+			"type": "image",
+            "url": "btn.png",
+            "scale9grid": "20,10,80,26"
+        },
+        {
+            "name": "bg_sound",
+			"type": "sound",
+			"url": "sound/bg.mp3"
+        },
+        {
+            "name": "hit_sound",
+			"type": "sound",
+			"url": "sound/hit.mp3"
+		}
+	]
+}

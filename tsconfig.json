@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "sourceMap": true,
+        "jsx": "preserve",
+        "experimentalDecorators": true
+    },
+    "exclude": [
+        "dist",
+        "node_modules"
+    ]
+}
