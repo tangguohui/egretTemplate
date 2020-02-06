@@ -2,6 +2,8 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const { copyLibs, devCopyLibs, devMergeLibs } = require('./libs');
+// const MergeIntoSingleFilePlugin = require('webpack-merge-and-include-globally');
 
 function resolve(dir) {
     return path.join(__dirname, dir);
@@ -44,16 +46,14 @@ module.exports = {
     plugins: [
         new HtmlPlugin({
             filename: '../dist/index.html',
-            template: 'src/index.html',
-            inject: false,
+            template: 'src/index.ejs',
+            inject: 'head',
+            templateParameters: {
+                libs: copyLibs,
+            },
         }),
         // new webpack.HotModuleReplacementPlugin(),
-        new CopyWebpackPlugin([
-            {from: 'src/assets', to: 'assets'},
-            {from: 'src/libs/egret/egret.js', to: 'libs/egret.js'},
-            {from: 'src/libs/egret/egret.web.js', to: 'libs/egret.web.js'},
-            {from: 'src/libs/tween/tween.js', to: 'libs/tween.js'},
-            {from: 'src/libs/assetsmanager/assetsmanager.js', to: 'libs/assetsmanager.js'},
-        ]),
+        new CopyWebpackPlugin([{from: 'src/assets', to: 'assets'}].concat(devCopyLibs)),
+        // new MergeIntoSingleFilePlugin({files:{'libs.js':devMergeLibs}}),
     ],
 };

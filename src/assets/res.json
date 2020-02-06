@@ -1,31 +1,31 @@
 {
-	"groups": [
-		{
-			"keys": "bg,btn,bg_sound,hit_sound",
-			"name": "preload"
-		}
-	],
-	"resources": [
-		{
-			"name": "bg",
-			"type": "image",
-			"url": "bg.jpg"
+    "groups": [
+        {
+            "keys": "bg,btn,bg_sound,hit_sound",
+            "name": "preload"
+        }
+    ],
+    "resources": [
+        {
+            "name": "bg",
+            "type": "image",
+            "url": "bg.jpg?bfbd6002c3"
         },
         {
-			"name": "btn",
-			"type": "image",
-            "url": "btn.png",
+            "name": "btn",
+            "type": "image",
+            "url": "btn.png?ede466e10b",
             "scale9grid": "20,10,80,26"
         },
         {
             "name": "bg_sound",
-			"type": "sound",
-			"url": "sound/bg.mp3"
+            "type": "sound",
+            "url": "sound/bg.mp3?6905b6b86b"
         },
         {
             "name": "hit_sound",
-			"type": "sound",
-			"url": "sound/hit.mp3"
-		}
-	]
+            "type": "sound",
+            "url": "sound/hit.mp3?2f8c8b4f4b"
+        }
+    ]
 }

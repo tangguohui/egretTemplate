@@ -3,9 +3,11 @@ EgretLauncher
 https://egret.com/downloads/engine.html
 1、注册并登录EgretLauncher
 2、下载引擎
-3、下载Egret Inspector Chrome插件包，解压Chrome扩展开发者模式本地压缩包安装
+3、下载Egret Inspector Chrome插件包，解压Chrome扩展在开发者模式下安装本地压缩包
 4、如果涉及EUI项目开发，下载Egret UI Editor
-5、创建项目，打开项目目录，复制libs\modules到libs（可以从已创建的项目查看对应引擎版本的API文档）
+5、在Launcher创建项目，打开项目目录，根据模板目录下build/libs.js库列表配置复制libs\modules相关文件到libs（可以从已创建的项目查看对应引擎版本的API文档）
+6、Launcher已创建项目的发布设置可以发布相关平台。（本模板只支持标准的HTML5项目，未研究通过本模板生成Launcher打包文件）
+7、如果assets/res.json文件，或者此文件配置的相关资源文件有更新，执行npm run hash一次后再npm run build。（此模板资源版本管理暂不支持多个资源配置文件）
 
 
 代码调试
@@ -35,6 +37,8 @@ https://github.com/TypeStrong/ts-loader
 引擎文档
 http://developer.egret.com/cn/github/egret-docs/Engine2D/displayObject/displayObject/index.html
 http://developer.egret.com/cn/apidoc/
+http://developer.egret.com/cn/example/egret2d/index.html
+http://developer.egret.com/cn/list/example/id/13
 音频系统
 http://developer.egret.com/cn/github/egret-docs/Engine2D/multimedia/audio/index.html
 http://developer.egret.com/cn/apidoc/index/name/egret.Sound
@@ -53,6 +57,13 @@ http://developer.egret.com/cn/github/egret-docs/Engine2D/timeControl/timeControl
 http://developer.egret.com/cn/github/egret-docs/Engine2D/net/sendHTTP/index.html
 碰撞检测
 http://developer.egret.com/cn/github/egret-docs/Engine2D/hit/rectangleHit/index.html
+使用p2制作跳跃游戏
+http://developer.egret.com/cn/github/egret-docs/extension/p2/p2/index.html
+https://blog.csdn.net/duan003387/article/details/81947782
+视频教程
+https://i.youku.com/i/UMTY0NzkyMDQ4OA==
+http://v.qq.com/vplus/9c76c903c2690ed7bcfe344f11a106c5
+http://developer.egret.com/cn/article/index/id/1082
 
 
 第三方库的使用方法
@@ -94,7 +105,8 @@ TypeScript Handbook（中文版）
 https://zhongsp.gitbooks.io/typescript-handbook/content/index.html
 在TypeScript中使用jsx：tsconfig.json增加"jsx":"preserve"，preserve只是支持.tsx文件编辑JSX，但不会把JSX转换为JS，还需要借助babel-loader来进一步转换。
 https://www.tslang.cn/docs/handbook/jsx.html
-另外一个很不错的2D H5游戏框架http://phaser.io
+另外一个很不错的2D H5游戏框架
+http://phaser.io
 
 
 注意

@@ -19,11 +19,9 @@
             height: 100%;
         }
     </style>
-    <script src="libs/egret.js"></script>
-    <script src="libs/egret.web.js"></script>
-    <script src="libs/tween.js"></script>
-    <script src="libs/assetsmanager.js"></script>
-    <script src="main.js"></script>
+    <% libs.forEach(function(url){ %>
+    <script src="<%=url %>"></script><% }) %>
+    <!-- <script src="libs.js"></script> -->
 </head>
 <body>
     <!-- http://developer.egret.com/cn/github/egret-docs/Engine2D/projectConfig/indexFile/index.html -->

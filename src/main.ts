@@ -1,5 +1,3 @@
-import 'es6-promise/auto'
-
 import { createBitmapByName } from './utils';
 import LoadingUI from './ui/LoadingUI';
 
