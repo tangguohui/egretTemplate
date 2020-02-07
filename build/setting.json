@@ -1,0 +1,19 @@
+{
+    "entryClass": "Main",
+    "orientation": "auto",
+    "scaleMode": "showAll",
+    "frameRate": 30,
+    "contentWidth": 640,
+    "contentHeight": 1136,
+    "multiFingered": 2,
+    "showFps": false,
+    "showLog": false,
+    "fpsStyle": "x:0,y:0,size:12,textColor:0xffffff,bgAlpha:0.9",
+    "libs": [
+        "egret",
+        "egret.web",
+        "assetsmanager",
+        "tween",
+        "promise"
+    ]
+}

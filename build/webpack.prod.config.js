@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
 const HtmlPlugin = require('html-webpack-plugin');
@@ -5,9 +6,10 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { copyLibs, prodCopyLibs, prodMergeLibs } = require('./libs');
 // const MergeIntoSingleFilePlugin = require('webpack-merge-and-include-globally');
-const fs = require('fs');
 const revisionHash = require('rev-hash');
 const ReplacePlugin = require('webpack-plugin-replace');
+
+const setting = JSON.parse(fs.readFileSync('./build/setting.json'));
 
 function resolve(dir) {
     return path.join(__dirname, dir);
@@ -40,6 +42,7 @@ module.exports = {
             template: 'src/index.ejs',
             inject: 'head',
             templateParameters: {
+                setting,
                 libs: copyLibs,
             },
         }),

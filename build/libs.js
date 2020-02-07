@@ -1,11 +1,6 @@
-const libs = [
-    'egret',
-    'egret.web',
-    'assetsmanager',
-    'tween',
-    'promise',
-];
-
+const fs = require('fs');
+const setting = JSON.parse(fs.readFileSync('./build/setting.json'));
+const libs = setting.libs;
 
 function removeWeb(name) {
     return name.replace(/\.web/, '');

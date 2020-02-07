@@ -1,9 +1,12 @@
+const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
 const HtmlPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { copyLibs, devCopyLibs, devMergeLibs } = require('./libs');
 // const MergeIntoSingleFilePlugin = require('webpack-merge-and-include-globally');
+
+const setting = JSON.parse(fs.readFileSync('./build/setting.json'));
 
 function resolve(dir) {
     return path.join(__dirname, dir);
@@ -49,6 +52,7 @@ module.exports = {
             template: 'src/index.ejs',
             inject: 'head',
             templateParameters: {
+                setting,
                 libs: copyLibs,
             },
         }),
